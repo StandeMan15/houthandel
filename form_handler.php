@@ -24,6 +24,16 @@ if(isset($class_three)){
     $total += $amount_three;
 }
 
+$shave = $amount_one + $amount_two + $amount_three;
+
+if($shave >= 200){
+    $total += 200;
+} else {
+    $total += $shave *0.60;
+}
+
+echo $total;
+
 if (isset($_REQUEST['delivery_days'])) {
 
     $deliveryDays = $_REQUEST['delivery_days'];
