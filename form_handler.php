@@ -1,9 +1,9 @@
 <?php
 $br = "<br>";
 
-$class_one = intval($_REQUEST['class_one']);
-$class_two = intval($_REQUEST['class_two']);
-$class_three = intval($_REQUEST['class_three']);
+$class_one = $_REQUEST['class_one'];
+$class_two = $_REQUEST['class_two'];
+$class_three = $_REQUEST['class_three'];
 $total = 0;
 
 if (isset($class_one)) {
@@ -13,7 +13,7 @@ if (isset($class_one)) {
 
 if (isset($class_two)) {
     $amount_two = $class_two * 500;
-    $total += $amount_one;
+    $total += $amount_two;
 }
 
 if (isset($class_three)) {
