@@ -12,4 +12,12 @@ $total = 3*3;
 
 echo $total;
 
+
+if (isset($_REQUEST['delivery_days'])) {
+    $deliveryDays = $_REQUEST['delivery_days'];
+    if ($deliveryDays <= 21) {
+        $total * 0.99;
+    }
+}
+
 ?>
