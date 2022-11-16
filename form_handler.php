@@ -21,8 +21,6 @@ if (isset($class_three)) {
     $total += $amount_three;
 }
 
-echo $total;
-
 $total_amount = $class_one + $class_two + $class_three;
 
 if($total <= 200){
