@@ -62,9 +62,9 @@ if (isset($_REQUEST['delivery_days'])) {
 <body>
     <div class="card" style="width:400px">
         <div class="card-body">
-            <p class="card-text">Kosten voor klasse 1: <?= $class_one ?></p>
-            <p class="card-text">Kosten voor klasse 2: <?= $class_two ?></p>
-            <p class="card-text">Kosten voor klasse 3: <?= $class_three ?></p>
+            <p class="card-text">Kosten voor klasse 1: <?= $amount_one ?></p>
+            <p class="card-text">Kosten voor klasse 2: <?= $amount_two ?></p>
+            <p class="card-text">Kosten voor klasse 3: <?= $amount_three ?></p>
             <p class="card-text">Uw korting is : <?= $discount ?></p>
             <p class="card-text">Totaal: <?= $total ?></p>
         </div>
