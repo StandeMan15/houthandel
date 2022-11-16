@@ -22,4 +22,12 @@ if(isset($class_three)){
 
 echo $total;
 
+
+if (isset($_REQUEST['delivery_days'])) {
+    $deliveryDays = $_REQUEST['delivery_days'];
+    if ($deliveryDays <= 21) {
+        $total * 0.99;
+    }
+}
+
 ?>
