@@ -10,7 +10,7 @@
     <input type="number" name="class_three" id="class_three"><br><br>
 
     <label for="delivery_days">Leverdagen</label>
-    <input type="number" name="delivery_days" id="delivery_days" min='14'><br><br>
+    <input type="number" name="delivery_days" id="delivery_days"><br><br>
 
     <input type="submit" value="Submit">
 </form>
