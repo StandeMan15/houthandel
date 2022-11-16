@@ -17,16 +17,16 @@
 
         <div class="formgroup">
             <label for="capacity">m3 klasse 1</label>
-            <input type="number" class="form-control" name="class_one" id="class_one"><br><br>
+            <input type="text" class="form-control" name="class_one" id="class_one"><br><br>
         </div>
 
         <div class="formgroup">
             <label for="capacity">m3 klasse 2</label>
-            <input type="number" class="form-control" name="class_two" id="class_two"><br><br>
+            <input type="text" class="form-control" name="class_two" id="class_two"><br><br>
         </div>
         <div class="formgroup">
             <label for="capacity">m3 klasse 3</label>
-            <input type="number" class="form-control" name="class_three" id="class_three"><br><br>
+            <input type="text" class="form-control" name="class_three" id="class_three"><br><br>
         </div>
         <div class="formgroup">
             <label for="delivery_days">Leverdagen</label>
