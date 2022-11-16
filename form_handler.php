@@ -21,7 +21,7 @@ if (isset($class_three)) {
     $total += $amount_three;
 }
 
-$shave = $amount_one + $amount_two + $amount_three;
+$shave = $class_one + $class_two + $class_three;
 
 if ($shave >= 200) {
     $total += 200;
