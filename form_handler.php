@@ -32,8 +32,6 @@ if($shave >= 200){
     $total += $shave *0.60;
 }
 
-echo $total;
-
 if (isset($_REQUEST['delivery_days'])) {
 
     $deliveryDays = $_REQUEST['delivery_days'];
