@@ -27,19 +27,23 @@ if($total <= 200){
     $total += $total_amount * 0.60;
 }
 
-if (isset($_REQUEST['delivery_days'])) {
+if (isset($_REQUEST['delivery_date'])) {
 
-    $deliveryDays = $_REQUEST['delivery_days'];
+    $beginDate = strtotime(date('y-m-d'));
+    $endDate = strtotime($_REQUEST['delivery_date']);
+    $dateDiff = $endDate - $beginDate;
 
-    if ($deliveryDays < 21) {
+    $date = round($dateDiff / (60 * 60 * 24))+1;
+
+    if ($date < 21) {
         $total *= 0.99;
         $discount = $total * 0.01;
     }
-    if (($deliveryDays >= 21) && ($deliveryDays < 28)) {
+    if (($date >= 21) && ($date < 28)) {
         $total *= 0.98;
         $discount = $total * 0.02;
     }
-    if ($deliveryDays > 28) {
+    if ($date > 28) {
         $total *= 0.975;
         $discount = $total * 0.025;
     }
@@ -62,11 +66,11 @@ if (isset($_REQUEST['delivery_days'])) {
 <body>
     <div class="card" style="width:400px">
         <div class="card-body">
-            <p class="card-text">Kosten voor klasse 1: <?= $amount_one ?></p>
-            <p class="card-text">Kosten voor klasse 2: <?= $amount_two ?></p>
-            <p class="card-text">Kosten voor klasse 3: <?= $amount_three ?></p>
-            <p class="card-text">Uw korting is : <?= $discount ?></p>
-            <p class="card-text">Totaal: <?= $total ?></p>
+            <p class="card-text">Kosten voor klasse 1: €<?= $amount_one ?></p>
+            <p class="card-text">Kosten voor klasse 2: €<?= $amount_two ?></p>
+            <p class="card-text">Kosten voor klasse 3: €<?= $amount_three ?></p>
+            <p class="card-text">Uw korting is : €<?= $discount ?></p>
+            <p class="card-text">Totaal: €<?= $total ?></p>
         </div>
     </div>
 

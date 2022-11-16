@@ -29,8 +29,8 @@
             <input type="text" class="form-control" name="class_three" id="class_three"><br><br>
         </div>
         <div class="formgroup">
-            <label for="delivery_days">Leverdagen</label>
-            <input type="number" class="form-control" name="delivery_days" id="delivery_days"><br><br>
+            <label for="delivery_days">LeverDatum</label>
+            <input type="date" class="form-control" name="delivery_date" id="delivery_date"><br><br>
         </div>
         <input type="submit" value="Submit">
     </form>
