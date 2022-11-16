@@ -13,7 +13,7 @@ if (isset($class_one)) {
 
 if (isset($class_two)) {
     $amount_two = $class_two * 500;
-    $total += $amount_one;
+    $total += $amount_two;
 }
 
 if (isset($class_three)) {
