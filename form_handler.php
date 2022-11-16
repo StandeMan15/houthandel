@@ -6,30 +6,27 @@ $class_two = intval($_REQUEST['class_two']);
 $class_three = intval($_REQUEST['class_three']);
 $total = 0;
 
-if(isset($class_one)){
+if (isset($class_one)) {
     $amount_one = $class_one * 300;
-    echo "Kosten voor klasse 1 hout " . $amount_one . $br;
     $total += $amount_one;
 }
 
-if(isset($class_two)){
+if (isset($class_two)) {
     $amount_two = $class_two * 500;
-    echo "Kosten voor klasse 2 hout " . $amount_two . $br;
     $total += $amount_one;
 }
 
-if(isset($class_three)){
+if (isset($class_three)) {
     $amount_three = $class_three * 450;
-    echo "Kosten voor klasse 3 hout " . $amount_three . $br;
     $total += $amount_three;
 }
 
 $shave = $amount_one + $amount_two + $amount_three;
 
-if($shave >= 200){
+if ($shave >= 200) {
     $total += 200;
 } else {
-    $total += $shave *0.60;
+    $total += $shave * 0.60;
 }
 
 if (isset($_REQUEST['delivery_days'])) {
@@ -50,8 +47,31 @@ if (isset($_REQUEST['delivery_days'])) {
     }
 }
 
-echo "Uw korting is " . $discount . $br;
-echo "Totaal " . $total;
-
-
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houthandel Pieter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="card" style="width:400px">
+        <div class="card-body">
+            <p class="card-text">Kosten voor klasse 1: <?= $class_one ?></p>
+            <p class="card-text">Kosten voor klasse 2: <?= $class_two ?></p>
+            <p class="card-text">Kosten voor klasse 3: <?= $class_three ?></p>
+            <p class="card-text">Uw korting is : <?= $discount ?></p>
+            <p class="card-text">Totaal: <?= $total ?></p>
+        </div>
+    </div>
+
+</body>
+
+</html>
