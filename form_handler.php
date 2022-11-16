@@ -14,9 +14,17 @@ echo $total;
 
 
 if (isset($_REQUEST['delivery_days'])) {
+
     $deliveryDays = $_REQUEST['delivery_days'];
-    if ($deliveryDays <= 21) {
+
+    if ($deliveryDays < 21) {
         $total * 0.99;
+    }
+    if (($deliveryDays >= 21) && ($deliveryDays < 28)) {
+        $total * 0.98;
+    }
+    if ($deliveryDays > 28) {
+        $total * 0.975;
     }
 }
 
