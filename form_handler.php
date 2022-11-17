@@ -7,24 +7,38 @@ $class_three = $_REQUEST['class_three'];
 $total = 0;
 
 if (isset($class_one)) {
-    $amount_one = $class_one * 300;
-    $total += $amount_one;
+    if(is_numeric($class_one)){
+        $amount_one = $class_one * 300;
+        $total += $amount_one;
+    } else {
+        $amount_one = 'Ongeldige waarde';
+    }
+
 }
 
 if (isset($class_two)) {
-    $amount_two = $class_two * 500;
-    $total += $amount_two;
+    if(is_numeric($class_two)){
+        $amount_two = $class_two * 500;
+        $total += $amount_two;
+    } else {
+        $amount_two = 'Ongeldige waarde';
+    }
 }
 
 if (isset($class_three)) {
-    $amount_three = $class_three * 450;
-    $total += $amount_three;
+    if(is_numeric($class_three)){
+        $amount_three = $class_three * 900;
+        $total += $amount_three;
+    } else {
+        $amount_three = 'Ongeldige waarde';
+    }
 }
 
-$total_amount = $class_one + $class_two + $class_three;
-
 if($total <= 200){
-    $total += $total_amount * 0.60;
+    $total += $total * 0.60;
+    $shave_costs = $total * 0.60;
+} else {
+    $shave_costs = 0;
 }
 
 if (isset($_REQUEST['delivery_days'])) {
@@ -32,17 +46,24 @@ if (isset($_REQUEST['delivery_days'])) {
     $deliveryDays = $_REQUEST['delivery_days'];
 
     if ($deliveryDays < 21) {
-        $total *= 0.99;
         $discount = $total * 0.01;
+        $total *= 0.99;
     }
     if (($deliveryDays >= 21) && ($deliveryDays < 28)) {
-        $total *= 0.98;
         $discount = $total * 0.02;
+        $total *= 0.98;
+
     }
     if ($deliveryDays > 28) {
-        $total *= 0.975;
         $discount = $total * 0.025;
+        $total *= 0.975;
     }
+    $amount_one = str_replace('.',',',$amount_one);
+    $amount_two = str_replace('.',',',$amount_two);
+    $amount_three = str_replace('.',',',$amount_three);
+    $shave_costs = str_replace('.',',',$shave_costs);
+    $discount = str_replace('.',',',$discount);
+    $total = str_replace('.',',',$total);
 }
 
 ?>
@@ -62,11 +83,12 @@ if (isset($_REQUEST['delivery_days'])) {
 <body>
     <div class="card" style="width:400px">
         <div class="card-body">
-            <p class="card-text">Kosten voor klasse 1: <?= $amount_one ?></p>
-            <p class="card-text">Kosten voor klasse 2: <?= $amount_two ?></p>
-            <p class="card-text">Kosten voor klasse 3: <?= $amount_three ?></p>
-            <p class="card-text">Uw korting is : <?= $discount ?></p>
-            <p class="card-text">Totaal: <?= $total ?></p>
+            <p class="card-text">Kosten voor klasse 1: € <?= $amount_one ?></p>
+            <p class="card-text">Kosten voor klasse 2: € <?= $amount_two ?></p>
+            <p class="card-text">Kosten voor klasse 3: € <?= $amount_three ?></p>
+            <p class="card-text">Kosten voor schaven: € <?= $shave_costs ?></p>
+            <p class="card-text">Uw korting is : € <?= $discount ?></p>
+            <p class="card-text">Totaal: € <?= $total ?></p>
         </div>
     </div>
 

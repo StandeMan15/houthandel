@@ -11,7 +11,7 @@
 
 <body>
     <h1>
-        Gaaf aan hoeveel U van welke soort hout wilt
+        Welkom bij pieters hout handel
     </h1>
     <form style="width: 33%;" action="form_handler.php" method="post">
 
