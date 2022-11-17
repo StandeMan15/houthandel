@@ -41,20 +41,22 @@ if($total <= 200){
     $shave_costs = 0;
 }
 
-if (isset($_REQUEST['delivery_days'])) {
+if (isset($_REQUEST['delivery_date'])) {
 
-    $deliveryDays = $_REQUEST['delivery_days'];
+    $beginDate = strtotime(date('y-m-d'));
+    $endDate = strtotime($_REQUEST['delivery_date']);
+    $dateDiff = $endDate - $beginDate;
 
-    if ($deliveryDays < 21) {
+    if ($dateDiff < 21) {
         $discount = $total * 0.01;
         $total *= 0.99;
     }
-    if (($deliveryDays >= 21) && ($deliveryDays < 28)) {
+    if (($dateDiff >= 21) && ($dateDiff < 28)) {
         $discount = $total * 0.02;
         $total *= 0.98;
 
     }
-    if ($deliveryDays > 28) {
+    if ($dateDiff > 28) {
         $discount = $total * 0.025;
         $total *= 0.975;
     }
